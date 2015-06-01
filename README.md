@@ -1,2 +1,3 @@
-# LN-Blog
+# LN-Blog #
+---
 LittleNinja Blog
