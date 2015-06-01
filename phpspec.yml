@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: LittleNinja
+        psr4_prefix: LittleNinja
+        src_path: app
