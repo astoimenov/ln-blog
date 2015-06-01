@@ -1,2 +1,2 @@
-# ln-blog
+# LN-Blog
 LittleNinja Blog
