@@ -1,2 +1,0 @@
-# LN-Blog
-LittleNinja Blog
