@@ -2,8 +2,10 @@
 
 namespace LittleNinja\Http\Controllers;
 
+use LittleNinja\Comment;
 use LittleNinja\Http\Controllers\Controller;
 use LittleNinja\Http\Requests\CommentRequest;
+use Redirect;
 
 class CommentsController extends Controller
 {
@@ -16,6 +18,8 @@ class CommentsController extends Controller
      */
     public function store(CommentRequest $request)
     {
-        //
+        Comment::create($request->all());
+
+        return Redirect::back();
     }
 }

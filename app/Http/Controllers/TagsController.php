@@ -16,6 +16,9 @@ class TagsController extends Controller
      */
     public function show(Tag $tag)
     {
-        //
+        $title = 'Таг: ' . $tag->name;
+        $posts = $tag->posts()->paginate(10);
+
+        return view('tags.show', compact('title', 'posts'));
     }
 }
