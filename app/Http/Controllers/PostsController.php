@@ -2,6 +2,7 @@
 
 namespace LittleNinja\Http\Controllers;
 
+use Illuminate\Http\Request;
 use LittleNinja\Http\Controllers\Controller;
 
 class PostsController extends Controller
@@ -25,5 +26,10 @@ class PostsController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+
     }
 }

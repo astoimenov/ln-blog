@@ -11,11 +11,74 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'as' => 'home',
+    'uses' => function () {
+        return view('welcome');
+    }
+]);
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('posts/search', [
+    'as' => 'posts.search',
+    'uses' => 'PostsController@search'
+]);
+
+Route::resource('posts', 'PostsController', [
+    'only' => ['index', 'show']
+]);
+
+Route::resource('categories', 'CategoriesController', [
+    'only' => ['show']
+]);
+
+Route::resource('comments', 'CommentsController', [
+    'only' => ['store']
+]);
+
+Route::resource('tags', 'TagsController', [
+    'only' => ['show']
+]);
+
+Route::group([
+    'prefix' => 'admin',
+    'middleware' => 'auth'
+], function () {
+
+    Route::get('posts/{posts}/restore', [
+        'as' => 'admin.posts.restore',
+        'uses' => 'Admin\PostsController@restore'
+    ]);
+
+    Route::get('posts/search', [
+        'as' => 'admin.posts.search',
+        'uses' => 'Admin\PostsController@search'
+    ]);
+
+    Route::resource('posts', 'PostsController', [
+        'except' => ['show']
+    ]);
+
+    Route::get('categories/{categories}/restore', [
+        'as' => 'admin.categories.restore',
+        'uses' => 'Admin\CategoriesController@restore'
+    ]);
+
+    Route::resource('categories', 'CategoriesController', [
+        'except' => ['show']
+    ]);
+
+    Route::get('comments/{comments}/restore', [
+        'as' => 'admin.comments.restore',
+        'uses' => 'Admin\CommentsController@restore'
+    ]);
+
+    Route::resource('comments', 'CommentsController', [
+        'only' => ['index', 'destroy']
+    ]);
+
+});
