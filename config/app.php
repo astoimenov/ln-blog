@@ -169,7 +169,6 @@ return [
         'Cache' => 'Illuminate\Support\Facades\Cache',
         'Config' => 'Illuminate\Support\Facades\Config',
         'Cookie' => 'Illuminate\Support\Facades\Cookie',
-        'Croppa' => 'Bkwld\Croppa\Facade',
         'Crypt' => 'Illuminate\Support\Facades\Crypt',
         'DB' => 'Illuminate\Support\Facades\DB',
         'Eloquent' => 'Illuminate\Database\Eloquent\Model',
