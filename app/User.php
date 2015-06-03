@@ -39,4 +39,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'password',
         'remember_token'
     ];
+
+    public function posts()
+    {
+        return $this->hasMany('LittleNinja\Post');
+    }
 }

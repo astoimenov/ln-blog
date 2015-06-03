@@ -19,4 +19,9 @@ class Tag extends Model
         'tag_name',
         'tag_slug'
     ];
+
+    public function posts()
+    {
+        return $this->belongsToMany('LittleNinja\Post');
+    }
 }

@@ -19,4 +19,9 @@ class Category extends Model
         'category_name',
         'category_slug'
     ];
+
+    public function posts()
+    {
+        return $this->belongsToMany('LittleNinja\Post');
+    }
 }

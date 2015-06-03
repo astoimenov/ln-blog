@@ -20,4 +20,24 @@ class Post extends Model
         'post_slug',
         'post_content'
     ];
+
+    public function author()
+    {
+        return $this->belongsTo('LittleNinja\User');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany('LittleNinja\Category')->withPivot('category_id', 'news_id');
+    }
+
+    public function comments()
+    {
+        return $this->morphMany('LittleNinja\Comment', 'commentable');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany('LittleNinja\Tag');
+    }
 }
