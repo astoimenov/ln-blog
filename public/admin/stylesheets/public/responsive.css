@@ -1,0 +1,215 @@
+
+@media (max-width: 1200px) { 
+ 
+    .carousel-caption { 
+      margin-bottom: 60px !important;
+      left: 90px !important;
+  }
+
+} /* end of max-width: 1200px */
+
+
+/*################################################################*/
+
+@media (min-width: 980px) and (max-width: 1199px) {
+
+
+
+
+
+}
+/*################################################################*/
+
+
+
+@media (max-width: 994px) {
+    .carousel-caption { 
+      margin-bottom: 20px !important;
+      left: 70px !important;
+  }
+
+    .remove { 
+      width: 63%;
+    }
+  
+    li.noneArrow {
+      display: none !important;
+    }
+
+}
+/*############ end 994px ####################################################*/
+
+
+
+
+@media (max-width: 767px) {
+  #logo {
+    left: 15px;
+  }
+  .searchLine a {
+    float: none;
+  }
+  .searchLine span.glyphicon {
+    float: none;
+  }
+  .searchLine ul.pull-right {
+    margin-bottom: 0;
+  }
+  .navFoot {
+    width: 440px;
+    margin: 0 auto;
+  }
+  .postContact .borderRight {
+    border-right: none;
+    border-bottom: 1px solid #333333;
+  }  
+  .postRow {
+    margin-right: 5px;
+  }
+  .navbar-nav {
+      position: absolute;
+      z-index: 1000; 
+      margin-top: -1px; 
+    }
+    .navbar-default .navbar-nav {
+      width: 100% !important;
+      background: #fff;
+    }
+    .navbar-default .navbar-nav>li>a {
+      display: block;
+      text-align: center;
+      line-height: 30px;
+    }
+    .search {
+      margin-bottom: 10px;
+    }
+    .searchLine {
+      text-align: center;
+    }
+    .searchLine ul.pull-right {
+      float: none !important;
+    }
+    .searchLine ul.pull-right li {
+      float: none;
+      border-right: 0;
+    }
+    .socialNav {
+      float: none !important;
+      text-align: center;
+      margin: 0 auto;
+      width: 164px;
+    }  
+    .thumbnail img.img-responsive {
+      width: 100%;
+    }
+    .thumbnail {
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 0 10px 0 !important; 
+    }
+    .favThumbnail {
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 0 35px 0 !important;
+    }
+    .favThumbnail h4 {
+      margin-left: 12px;
+    }
+    .carousel-caption {
+      bottom: 10px;
+      left: 70px !important;
+    }
+    .carousel-caption h1 {
+      font-size: 25px;
+    }
+    .carousel-caption p {
+      font-size: 15px;
+    }  
+    .navFoot li a {
+      font-size: 12px;  
+    }
+    .steps li {
+      float: left !important;
+      display: block !important;
+      width: 100% !important;
+      margin: 0 auto;
+    }
+    li.noneArrow {
+      display: none !important;
+    }
+    .line {
+      margin-left: 0;
+    }
+    .lineAsk {
+      margin-left: 15px;
+    } 
+    .remove { 
+      width: 100%;
+    }
+    .favThumbnail > a {
+      float: none;
+      height: auto;
+    } 
+    .searchLine .col-sm-10, .searchLine .col-sm-2 {
+    margin-bottom: 0px; 
+    }
+} /* end of max-width: 767px */
+/*###############################################################*/
+
+
+@media (max-width: 480px) { 
+  .navFoot {
+    width: auto;
+    display: none;
+  }
+    li.arrowDown {
+      display: block !important;
+    }
+  .navFoot li {
+    margin-right: 15px;
+  }
+  .navLeft {
+    text-align: center !important;
+  }
+  #logo {
+    height: 50px;
+    background: url(/assets/images/public/logo_mobile.jpg) no-repeat;
+    top:0;
+    left: 15px;
+  }
+  .footerMobile {
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+  } 
+  .topLine ul {
+    margin-right: 25px;
+  } 
+  .carousel-caption h1 {
+    font-size: 17px !important;
+  }
+  .carousel-caption p {
+    font-size: 10px;  
+  }
+  .carousel-caption {
+    margin-bottom: 30px !important;
+  }
+  .carousel-caption p {  
+    display: none;
+  }
+  button.addMachine {
+    padding: 0 10px !important;
+  } 
+
+} /* end of max-width: 480px */
+
+
+
+
+
+@media (max-width: 320px) { 
+  .carousel-caption {
+    margin-bottom: 10px !important;
+    left: 12% !important;
+  } 
+} /* end of max-width: 480px */

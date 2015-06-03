@@ -49,6 +49,11 @@ Route::group([
     'middleware' => 'auth'
 ], function () {
 
+    Route::get('posts/awaiting', [
+        'as' => 'admin.awaiting_posts.index',
+        'uses' => 'Admin\PostsController@posts'
+    ]);
+
     Route::get('posts/{posts}/restore', [
         'as' => 'admin.posts.restore',
         'uses' => 'Admin\PostsController@restore'
@@ -59,7 +64,7 @@ Route::group([
         'uses' => 'Admin\PostsController@search'
     ]);
 
-    Route::resource('posts', 'PostsController', [
+    Route::resource('posts', 'Admin\PostsController', [
         'except' => ['show']
     ]);
 
@@ -68,7 +73,7 @@ Route::group([
         'uses' => 'Admin\CategoriesController@restore'
     ]);
 
-    Route::resource('categories', 'CategoriesController', [
+    Route::resource('categories', 'Admin\CategoriesController', [
         'except' => ['create', 'edit']
     ]);
 
@@ -77,7 +82,7 @@ Route::group([
         'uses' => 'Admin\CommentsController@restore'
     ]);
 
-    Route::resource('comments', 'CommentsController', [
+    Route::resource('comments', 'Admin\CommentsController', [
         'only' => ['index', 'destroy']
     ]);
 

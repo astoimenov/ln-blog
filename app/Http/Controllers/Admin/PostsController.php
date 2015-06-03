@@ -26,7 +26,7 @@ class PostsController extends Controller
         $categories = Category::lists('category_name', 'id');
         $title = 'Публикувани постове';
 
-        return view('admin.news.index', compact('posts', 'categories', 'title'));
+        return view('admin.posts.index', compact('posts', 'categories', 'title'));
     }
 
     public function awaiting()
@@ -35,7 +35,7 @@ class PostsController extends Controller
         $categories = Category::lists('category_name', 'id');
         $title = 'Чакащи постове';
 
-        return view('admin.news.index', compact('posts', 'categories', 'title'));
+        return view('admin.posts.index', compact('posts', 'categories', 'title'));
     }
 
     /**
@@ -48,7 +48,7 @@ class PostsController extends Controller
         $categories = Category::lists('category_name', 'id');
         $tags = Tag::lists('tag_name', 'tag_name');
 
-        return view('admin.news.create', compact('categories', 'tags'));
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -83,7 +83,7 @@ class PostsController extends Controller
         $article->tags()->attach($tagIds);
         $article->categories()->attach($categories);
 
-        return redirect('admin/news');
+        return redirect('admin/posts');
     }
 
     /**
@@ -100,7 +100,7 @@ class PostsController extends Controller
         $tags = Tag::lists('name', 'name');
         $selectedTags = $post->tags()->lists('name');
 
-        return view('admin.news.edit', compact(
+        return view('admin.posts.edit', compact(
             'post',
             'categories',
             'selectedCategories',
@@ -138,7 +138,7 @@ class PostsController extends Controller
         $post->tags()->sync($tagIds);
         $post->categories()->sync($categories);
 
-        return redirect('admin/news');
+        return redirect('admin/posts');
     }
 
     /**
@@ -185,6 +185,6 @@ class PostsController extends Controller
         $title = 'Търсене';
         $categories = Category::lists('name', 'id');
 
-        return view('admin.news.index', compact('posts', 'title', 'categories'))->withInput(Input::all());
+        return view('admin.posts.index', compact('posts', 'title', 'categories'))->withInput(Input::all());
     }
 }

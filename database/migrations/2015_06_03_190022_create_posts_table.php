@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('post_slug');
             $table->text('post_content');
             $table->boolean('is_published');
+            $table->integer('author_id')->unsigned()->index();
             $table->timestamps();
             $table->softDeletes();
         });
