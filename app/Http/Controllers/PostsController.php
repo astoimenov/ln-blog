@@ -4,6 +4,7 @@ namespace LittleNinja\Http\Controllers;
 
 use Illuminate\Http\Request;
 use LittleNinja\Http\Controllers\Controller;
+use LittleNinja\Post;
 
 class PostsController extends Controller
 {
@@ -20,10 +21,10 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Post $post
      * @return Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
         //
     }

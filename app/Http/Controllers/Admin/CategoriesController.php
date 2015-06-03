@@ -2,6 +2,7 @@
 
 namespace LittleNinja\Http\Controllers\Admin;
 
+use LittleNinja\Category;
 use LittleNinja\Http\Controllers\Controller;
 
 class CategoriesController extends Controller
@@ -35,10 +36,10 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param Category $category
      * @return Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
         //
     }
@@ -46,10 +47,10 @@ class CategoriesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param Category $category
      * @return Response
      */
-    public function update($id)
+    public function update(Category $category)
     {
         //
     }
@@ -57,15 +58,15 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Category $category
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
         //
     }
 
-    public function restore($id)
+    public function restore(Category $category)
     {
 
     }

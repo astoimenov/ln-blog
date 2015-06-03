@@ -4,6 +4,9 @@ namespace LittleNinja\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
+use LittleNinja\Category;
+use LittleNinja\Post;
+use LittleNinja\Tag;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -24,7 +27,17 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
+        $router->bind('categories', function ($slug) {
+            return Category::withTrashed()->whereSlug($slug)->first();
+        });
+
+        $router->bind('news', function ($slug) {
+            return Post::withTrashed()->whereSlug($slug)->first();
+        });
+
+        $router->bind('tags', function ($slug) {
+            return Tag::withTrashed()->whereSlug($slug)->first();
+        });
 
         parent::boot($router);
     }

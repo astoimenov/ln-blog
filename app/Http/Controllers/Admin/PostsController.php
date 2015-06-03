@@ -4,6 +4,7 @@ namespace LittleNinja\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use LittleNinja\Http\Controllers\Controller;
+use LittleNinja\Post;
 
 class PostsController extends Controller
 {
@@ -40,10 +41,10 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param Post $post
      * @return Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
         //
     }
@@ -51,10 +52,10 @@ class PostsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param Post $post
      * @return Response
      */
-    public function update($id)
+    public function update(Post $post)
     {
         //
     }
@@ -62,15 +63,15 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Post $post
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
         //
     }
 
-    public function restore($id)
+    public function restore(Post $post)
     {
 
     }

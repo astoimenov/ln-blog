@@ -3,6 +3,7 @@
 namespace LittleNinja\Http\Controllers;
 
 use LittleNinja\Http\Controllers\Controller;
+use LittleNinja\Tag;
 
 class TagsController extends Controller
 {
@@ -10,10 +11,10 @@ class TagsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Tag $tag
      * @return Response
      */
-    public function show($id)
+    public function show(Tag $tag)
     {
         //
     }
