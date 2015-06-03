@@ -6,14 +6,10 @@ use LittleNinja\Http\Controllers\Controller;
 
 class CategoriesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
+
     public function index()
     {
-        //
+
     }
 
     /**
@@ -32,17 +28,6 @@ class CategoriesController extends Controller
      * @return Response
      */
     public function store()
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
     {
         //
     }
@@ -78,5 +63,10 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function restore($id)
+    {
+
     }
 }
