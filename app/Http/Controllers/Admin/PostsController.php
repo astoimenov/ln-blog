@@ -4,6 +4,7 @@ namespace LittleNinja\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use LittleNinja\Http\Controllers\Controller;
+use LittleNinja\Http\Requests\PostRequest;
 use LittleNinja\Post;
 
 class PostsController extends Controller
@@ -31,9 +32,10 @@ class PostsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param PostRequest $request
      * @return Response
      */
-    public function store()
+    public function store(PostRequest $request)
     {
         //
     }
@@ -53,9 +55,10 @@ class PostsController extends Controller
      * Update the specified resource in storage.
      *
      * @param Post $post
+     * @param PostRequest $request
      * @return Response
      */
-    public function update(Post $post)
+    public function update(Post $post, PostRequest $request)
     {
         //
     }

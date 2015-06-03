@@ -17,6 +17,6 @@ class Category extends Model
 
     protected $fillable = [
         'category_name',
-        'post_slug'
+        'category_slug'
     ];
 }

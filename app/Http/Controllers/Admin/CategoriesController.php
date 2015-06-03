@@ -4,6 +4,7 @@ namespace LittleNinja\Http\Controllers\Admin;
 
 use LittleNinja\Category;
 use LittleNinja\Http\Controllers\Controller;
+use LittleNinja\Http\Requests\CategoryRequest;
 
 class CategoriesController extends Controller
 {
@@ -26,9 +27,10 @@ class CategoriesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param CategoryRequest $request
      * @return Response
      */
-    public function store()
+    public function store(CategoryRequest $request)
     {
         //
     }
@@ -48,9 +50,10 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param Category $category
+     * @param CategoryRequest $request
      * @return Response
      */
-    public function update(Category $category)
+    public function update(Category $category, CategoryRequest $request)
     {
         //
     }
