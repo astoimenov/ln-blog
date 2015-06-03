@@ -18,7 +18,12 @@ class Post extends Model
     protected $fillable = [
         'post_title',
         'post_slug',
-        'post_content'
+        'post_content',
+        'is_published'
+    ];
+
+    protected $casts = [
+        'is_published' => 'boolean'
     ];
 
     public function author()

@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->string('post_title');
             $table->string('post_slug');
             $table->text('post_content');
+            $table->boolean('is_published');
             $table->timestamps();
             $table->softDeletes();
         });
