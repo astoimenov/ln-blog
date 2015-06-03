@@ -69,7 +69,7 @@ Route::group([
     ]);
 
     Route::resource('categories', 'CategoriesController', [
-        'except' => ['show']
+        'except' => ['create', 'edit']
     ]);
 
     Route::get('comments/{comments}/restore', [
