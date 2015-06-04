@@ -16,9 +16,10 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::whereIsPublished(1)->orderBy('created_at', 'desc')->paginate(10);
+        $posts = Post::whereIsPublished(1)->orderBy('created_at', 'desc')->paginate(5);
+        $title = '';
 
-        return view('posts.index', compact('posts'));
+        return view('posts.index', compact('posts', 'title'));
     }
 
     /**
@@ -44,6 +45,6 @@ class PostsController extends Controller
 
         $title = 'Търсене';
 
-        return view('list', compact('posts', 'title'))->withInput($request->all());
+        return view('posts.index', compact('posts', 'title'))->withInput($request->all());
     }
 }

@@ -16,8 +16,9 @@ class CategoriesController extends Controller
      */
     public function show(Category $category)
     {
-        $categoryPosts = $category->posts()->whereIsPublished(1)->orderBy('created_at', 'desc')->paginate(10);
+        $posts = $category->posts()->whereIsPublished(1)->orderBy('created_at', 'desc')->paginate(10);
+        $title = '';
 
-        return view('categories.show', compact('categoryPosts'));
+        return view('posts.index', compact('posts', 'title'));
     }
 }
