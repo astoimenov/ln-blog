@@ -8,7 +8,7 @@
             {{-- Title form input --}}
             <div class="form-group">
                 {!! Form::label('post_title', 'Заглавие:') !!}
-                {!! Form::text('post_title', null, ['class' => 'form-control', 'onkeyup' => 'slugify()', 'required' !!}
+                {!! Form::text('post_title', null, ['class' => 'form-control', 'onkeyup' => 'slugify()', 'required']) !!}
                 @if ($errors->has('post_title'))
                     <div class="text-danger">
                         {{ $errors->first('post_title') }}
@@ -88,7 +88,7 @@
             });
 
             tinymce.init({
-                selector: '#content',
+                selector: '#post_content',
                 plugins: [
                     'advlist autolink lists link image charmap print preview anchor',
                     'searchreplace visualblocks code fullscreen',
