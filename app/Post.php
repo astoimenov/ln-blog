@@ -19,7 +19,8 @@ class Post extends Model
         'post_title',
         'post_slug',
         'post_content',
-        'is_published'
+        'is_published',
+        'author_id'
     ];
 
     protected $casts = [
@@ -33,7 +34,7 @@ class Post extends Model
 
     public function categories()
     {
-        return $this->belongsToMany('LittleNinja\Category')->withPivot('category_id', 'news_id');
+        return $this->belongsToMany('LittleNinja\Category')->withPivot('category_id', 'post_id');
     }
 
     public function comments()

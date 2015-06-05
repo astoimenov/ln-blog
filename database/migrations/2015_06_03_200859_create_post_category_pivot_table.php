@@ -12,7 +12,7 @@ class CreatePostCategoryPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_category', function (Blueprint $table) {
+        Schema::create('category_post', function (Blueprint $table) {
             $table->integer('post_id')->unsigned()->index();
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->integer('category_id')->unsigned()->index();
@@ -27,6 +27,6 @@ class CreatePostCategoryPivotTable extends Migration
      */
     public function down()
     {
-        Schema::drop('post_category');
+        Schema::drop('category_post');
     }
 }

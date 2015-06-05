@@ -55,16 +55,16 @@
                             <td>{{ $post->post_title }}</td>
                             <td>
                                 @if(is_null($post->deleted_at))
-                                    {!! link_to_action('Admin\PostsController@edit', '', ['posts' => $post->slug],
+                                    {!! link_to_action('Admin\PostsController@edit', '', ['posts' => $post->post_slug],
                                     ['class' => 'btn btn-default glyphicon glyphicon-edit']) !!}
                                     {!! Form::open(['method' => 'DELETE', 'class' => 'inline',
-                                    'action' => ['Admin\PostsController@destroy', $post->slug]]) !!}
+                                    'action' => ['Admin\PostsController@destroy', $post->post_slug]]) !!}
                                     <button type="submit"
                                             class="btn btn-danger glyphicon glyphicon-remove-circle"></button>
                                     {!! Form::close() !!}
                                 @else
                                     {!! link_to_action('Admin\PostsController@restore', 'Възстанови', ['posts' =>
-                                    $post->slug], ['class' => 'btn btn-default']) !!}
+                                    $post->post_slug], ['class' => 'btn btn-default']) !!}
                                 @endif
                             </td>
                         </tr>

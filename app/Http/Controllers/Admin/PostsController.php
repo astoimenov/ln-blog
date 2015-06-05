@@ -22,7 +22,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::withTrashed()->orderBy('created_at', 'desc')->whereIsPublished(1)->paginate(15);
+        $posts = Post::withTrashed()->orderBy('created_at', 'desc')->paginate(15);
         $categories = Category::lists('category_name', 'id');
         $title = 'Публикувани постове';
 
@@ -31,7 +31,7 @@ class PostsController extends Controller
 
     public function awaiting()
     {
-        $posts = Post::withTrashed()->orderBy('created_at', 'desc')->whereIsPublished(0)->paginate(15);
+        $posts = Post::withTrashed()->orderBy('created_at', 'desc')->paginate(15);
         $categories = Category::lists('category_name', 'id');
         $title = 'Чакащи постове';
 
@@ -69,12 +69,12 @@ class PostsController extends Controller
         $tags = $request->input('tags') ? $request->input('tags') : [];
         $tagIds = array();
         foreach ($tags as $tag) {
-            if ($currentTag = Tag::whereName($tag)->first()) {
+            if ($currentTag = Tag::whereTagName($tag)->first()) {
                 $tagIds[] = $currentTag->id;
             } else {
                 $savedTag = Tag::create([
-                    'name' => $tag,
-                    'slug' => Str::slug($tag)
+                    'tag_name' => $tag,
+                    'tag_slug' => Str::slug($tag)
                 ]);
                 $tagIds[] = $savedTag->id;
             }
@@ -94,11 +94,11 @@ class PostsController extends Controller
      */
     public function edit(Post $post)
     {
-        $categories = Category::lists('name', 'id');
+        $categories = Category::lists('category_name', 'id');
         $selectedCategories = $post->categories()->lists('id');
 
-        $tags = Tag::lists('name', 'name');
-        $selectedTags = $post->tags()->lists('name');
+        $tags = Tag::lists('tag_name', 'tag_name');
+        $selectedTags = $post->tags()->lists('tag_name');
 
         return view('admin.posts.edit', compact(
             'post',
@@ -122,12 +122,12 @@ class PostsController extends Controller
         $tags = $request->input('tags') ? $request->input('tags') : [];
         $tagIds = array();
         foreach ($tags as $tag) {
-            if ($currentTag = Tag::whereName($tag)->first()) {
+            if ($currentTag = Tag::whereTagName($tag)->first()) {
                 $tagIds[] = $currentTag->id;
             } else {
                 $savedTag = Tag::create([
-                    'name' => $tag,
-                    'slug' => Str::slug($tag)
+                    'tag_name' => $tag,
+                    'tag_slug' => Str::slug($tag)
                 ]);
                 $tagIds[] = $savedTag->id;
             }

@@ -10,7 +10,7 @@
             <div class="form-group">
                 {!! Form::label('post_title', 'Заглавие:') !!}
                 {!! Form::text('post_title', null, ['class' => 'form-control', 'onload' => 'slugify()', 'onkeyup' =>
-                'slugify()', 'required' !!}
+                'slugify()', 'required']) !!}
                 @if ($errors->has('post_title'))
                     <div class="text-danger">
                         {{ $errors->first('post_title') }}
@@ -56,7 +56,7 @@
             {{-- Content form input --}}
             <div class="form-group">
                 {!! Form::label('post_content', 'Текст:') !!}
-                {!! Form::textarea('post_content', null, ['class' => 'form-control', 'required' !!}
+                {!! Form::textarea('post_content', null, ['class' => 'form-control', 'required']) !!}
                 @if ($errors->has('post_content'))
                     <div class="text-danger">
                         {{ $errors->first('post_content') }}
