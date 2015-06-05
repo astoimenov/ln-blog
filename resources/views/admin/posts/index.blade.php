@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-group col-sm-4">
-                        {!! Form::select('category_id', array_merge(array(0 => null), $categories), 0, ['class' =>
+                        {!! Form::select('category_id', $categories, 0, ['class' =>
                         'form-control first-disabled']) !!}
                     </div>
 

@@ -88,7 +88,7 @@
             });
 
             tinymce.init({
-                selector: '#content',
+                selector: '#post_content',
                 plugins: [
                     'advlist autolink lists link image charmap print preview anchor',
                     'searchreplace visualblocks code fullscreen',

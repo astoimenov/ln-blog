@@ -28,15 +28,15 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {
         $router->bind('categories', function ($slug) {
-            return Category::withTrashed()->whereSlug($slug)->first();
+            return Category::withTrashed()->whereCategorySlug($slug)->first();
         });
 
-        $router->bind('news', function ($slug) {
-            return Post::withTrashed()->whereSlug($slug)->first();
+        $router->bind('posts', function ($slug) {
+            return Post::withTrashed()->wherePostSlug($slug)->first();
         });
 
         $router->bind('tags', function ($slug) {
-            return Tag::withTrashed()->whereSlug($slug)->first();
+            return Tag::withTrashed()->whereTagSlug($slug)->first();
         });
 
         parent::boot($router);
