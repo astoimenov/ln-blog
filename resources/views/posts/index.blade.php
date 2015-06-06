@@ -33,8 +33,8 @@
             </article>
         @endforeach
     </section>
-    <section class="pagination clearfix">
-        <div class="col-xs-12">
+    <section class="pagi clearfix">
+        <div class="col-xs-12 text-center">
             <?= $posts->render() ?>
         </div>
     </section>

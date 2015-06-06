@@ -41,7 +41,7 @@ class PostsController extends Controller
 
             $q->whereRaw("MATCH(post_title, post_content) AGAINST(? IN BOOLEAN MODE)", array($keyword));
 
-        })->paginate(15);
+        })->paginate(10);
 
         $title = 'Търсене';
 

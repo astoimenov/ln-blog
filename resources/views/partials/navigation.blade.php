@@ -10,7 +10,7 @@
         </div>
         <ul id="main-nav" class="collapse navbar-collapse">
             <li class="<?= str_is(Request::path(), '/') ? 'active' : '' ?>">
-                <a href="#">Начало</a>
+                <a href="/posts">Начало</a>
             </li>
             <li class="<?= str_contains(Request::path(), 'categories/na-fokus') ? 'active' : '' ?>">
                 <a href="#">Категория 1</a>
@@ -35,9 +35,6 @@
             </li>
             <li class="<?= str_contains(Request::path(), 'categories/na-fokus') ? 'active' : '' ?>">
                 <a href="#">Категория 8</a>
-            </li>
-            <li class="<?= str_contains(Request::path(), 'categories/na-fokus') ? 'active' : '' ?>">
-                <a href="#">Категория 9</a>
             </li>
         </ul>
     </div>

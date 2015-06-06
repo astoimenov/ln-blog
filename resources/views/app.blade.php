@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LittleNinja's blog</title>
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/css/all.css') }}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
@@ -16,12 +16,13 @@
         </div>
 
         <div class="col-md-4 col-sm-4 aside-holder">
-            @include('partials.sidebar-baner')
+{{--            @include('partials.sidebar')--}}
         </div>
     </div>
 </div>
 @include('partials.footer')
 
+<script src="{{ asset('/js/all.js') }}" type="text/javascript"></script>
 @yield('scripts')
 </body>
 </html>
