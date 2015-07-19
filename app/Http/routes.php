@@ -13,9 +13,7 @@
 
 Route::get('/', [
     'as' => 'home',
-    'uses' => function () {
-        return view('welcome');
-    }
+    'uses' => 'PostsController@index'
 ]);
 
 Route::controllers([
@@ -29,7 +27,7 @@ Route::get('posts/search', [
 ]);
 
 Route::resource('posts', 'PostsController', [
-    'only' => ['index', 'show']
+    'only' => ['show']
 ]);
 
 Route::resource('categories', 'CategoriesController', [

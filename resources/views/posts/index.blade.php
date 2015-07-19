@@ -1,42 +1,113 @@
 @extends('app')
 
 @section('content')
-<main class="row">
-    <section class="page-header clearfix">
-        <div class="col-xs-12">
-            <h1>
-                <strong class="uppercase">{{ $title }}</strong>
-            </h1>
-        </div>
-    </section>
-    <section class="news-list clearfix">
-        @foreach($posts as $post)
-            <article class="news-list-article clearfix">
-                <div class="col-md-9 col-sm-8 col-smx-7 col-xs-12">
-                    <h3 class="title">
-                        {!! link_to_route('posts.show', $post->post_title, ['posts' =>
-                        $post->post_slug], ['title' => $post->post_title]) !!}
-                    </h3>
-
-                    <div class="information clearfix">
-                        <span class="published">
-                            <span class="date">{{ $post->created_at->format('j F Y')  }}</span>
-                            <span class="hours">{{ $post->created_at->toTimeString() }}</span>
-                        </span>
-                        <span class="comments">
-                            <span class="glyphicon glyphicon-comment"></span>
-                            <span class="count">{{ count($post->comments) }}</span>
-                        </span>
-                    </div>
-                    <div class="preview">{!! str_limit($post->post_content, 200) !!}</div>
+    <div class="demo-blog__posts mdl-grid">
+        <div class="mdl-card coffee-pic mdl-cell mdl-cell--8-col">
+            <div class="mdl-card__media mdl-color-text--grey-50">
+                <h3><a href="entry.html">Coffee Pic</a></h3>
+            </div>
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                <div class="minilogo"></div>
+                <div>
+                    <strong>The Newist</strong>
+                    <span>2 days ago</span>
                 </div>
-            </article>
-        @endforeach
-    </section>
-    <section class="pagi clearfix">
-        <div class="col-xs-12 text-center">
-            <?= $posts->render() ?>
+            </div>
         </div>
-    </section>
-</main>
+        <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
+            <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent"><i
+                        class="material-icons mdl-color-text--white">add</i></button>
+            <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
+                <img src="images/logo.png">
+                +1,337
+            </div>
+            <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+                <div>
+                    <strong>The Newist</strong>
+                </div>
+                <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
+                    <button class="mdl-menu__item mdl-js-ripple-effect">
+                        <span class="mdl-ripple"></span>
+                        About
+                    </button>
+                    <button class="mdl-menu__item mdl-js-ripple-effect">
+                        <span class="mdl-ripple"></span>
+                        Message
+                    </button>
+                    <button class="mdl-menu__item mdl-js-ripple-effect">
+                        <span class="mdl-ripple"></span>
+                        Favorite
+                    </button>
+                    <button class="mdl-menu__item mdl-js-ripple-effect">
+                        <span class="mdl-ripple"></span>
+                        Search
+                    </button>
+                </ul>
+                <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
+            </div>
+        </div>
+        <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__media mdl-color-text--grey-50">
+                <h3><a href="entry.html">On the road again</a></h3>
+            </div>
+            <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+                Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim
+                nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat
+                duis.
+            </div>
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                <div class="minilogo"></div>
+                <div>
+                    <strong>The Newist</strong>
+                    <span>2 days ago</span>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-card amazing mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__title mdl-color-text--grey-50">
+                <h3 class="quote"><a href="entry.html">I couldn’t take any pictures but this was an amazing
+                        thing…</a></h3>
+            </div>
+            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim
+                nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat
+                duis.
+            </div>
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                <div class="minilogo"></div>
+                <div>
+                    <strong>The Newist</strong>
+                    <span>2 days ago</span>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__media mdl-color-text--grey-50">
+                <h3><a href="entry.html">Shopping</a></h3>
+            </div>
+            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim
+                nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat
+                duis.
+            </div>
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                <div class="minilogo"></div>
+                <div>
+                    <strong>The Newist</strong>
+                    <span>2 days ago</span>
+                </div>
+            </div>
+        </div>
+        <nav class="demo-nav mdl-cell mdl-cell--12-col">
+            <div class="section-spacer"></div>
+            <a href="entry.html" class="demo-nav__button">
+                More
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons">arrow_forward</i>
+                </button>
+            </a>
+        </nav>
+    </div>
 @endsection

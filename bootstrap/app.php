@@ -27,18 +27,18 @@ $app = new Illuminate\Foundation\Application(
 */
 
 $app->singleton(
-    'Illuminate\Contracts\Http\Kernel',
-    'LittleNinja\Http\Kernel'
+    Illuminate\Contracts\Http\Kernel::class,
+    LittleNinja\Http\Kernel::class
 );
 
 $app->singleton(
-    'Illuminate\Contracts\Console\Kernel',
-    'LittleNinja\Console\Kernel'
+    Illuminate\Contracts\Console\Kernel::class,
+    LittleNinja\Console\Kernel::class
 );
 
 $app->singleton(
-    'Illuminate\Contracts\Debug\ExceptionHandler',
-    'LittleNinja\Exceptions\Handler'
+    Illuminate\Contracts\Debug\ExceptionHandler::class,
+    LittleNinja\Exceptions\Handler::class
 );
 
 /*

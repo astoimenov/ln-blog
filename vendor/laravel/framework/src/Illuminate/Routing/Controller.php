@@ -4,6 +4,7 @@ namespace Illuminate\Routing;
 
 use Closure;
 use BadMethodCallException;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -56,7 +57,7 @@ abstract class Controller
      * @param  array  $options
      * @return void
      *
-     * @deprecated since version 5.1
+     * @deprecated since version 5.1.
      */
     public function beforeFilter($filter, array $options = [])
     {
@@ -70,7 +71,7 @@ abstract class Controller
      * @param  array  $options
      * @return void
      *
-     * @deprecated since version 5.1
+     * @deprecated since version 5.1.
      */
     public function afterFilter($filter, array $options = [])
     {
@@ -137,7 +138,7 @@ abstract class Controller
      */
     protected function isInstanceFilter($filter)
     {
-        if (is_string($filter) && starts_with($filter, '@')) {
+        if (is_string($filter) && Str::startsWith($filter, '@')) {
             if (method_exists($this, substr($filter, 1))) {
                 return true;
             }
@@ -154,7 +155,7 @@ abstract class Controller
      * @param  string  $filter
      * @return void
      *
-     * @deprecated since version 5.1
+     * @deprecated since version 5.1.
      */
     public function forgetBeforeFilter($filter)
     {
@@ -167,7 +168,7 @@ abstract class Controller
      * @param  string  $filter
      * @return void
      *
-     * @deprecated since version 5.1
+     * @deprecated since version 5.1.
      */
     public function forgetAfterFilter($filter)
     {
@@ -203,7 +204,7 @@ abstract class Controller
      *
      * @return array
      *
-     * @deprecated since version 5.1
+     * @deprecated since version 5.1.
      */
     public function getBeforeFilters()
     {
@@ -215,7 +216,7 @@ abstract class Controller
      *
      * @return array
      *
-     * @deprecated since version 5.1
+     * @deprecated since version 5.1.
      */
     public function getAfterFilters()
     {

@@ -115,7 +115,7 @@
             </div>
             <div class="col-md-12">
                 @foreach($post->comments as $comment)
-                    <post class="user-comment">
+                    <article class="user-comment">
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="user">
@@ -126,7 +126,7 @@
                             </div>
                             <div class="col-md-10">
                                 <div class="top-bar">
-                                    <span class="author">{{ $comment->visitor_name }}</span>
+                                    <span class="author">{{ $comment->user_name }}</span>
                                 <span class="information">
                                     на {{ $comment->created_at->format('j F Y') }}
                                     в {{ $comment->created_at->toTimeString() }}
@@ -140,36 +140,42 @@
                                 </div>
                             </div>
                         </div>
-                    </post>
+                    </article>
                 @endforeach
             </div>
         </section>
         <section class="comment-form post-page">
             <div class="col-md-12">
                 <header class="solid-header gray slider">
-                    <h3><strong>Напиши коментар</strong></h3>
+                    <h3>
+                        <strong>Напиши коментар</strong>
+                    </h3>
                 </header>
             </div>
             {!! Form::open(array('action' => 'CommentsController@store')) !!}
             <input name="commentable_id" type="hidden" value="{{ $post->id }}"/>
-            <input name="commentable_type" type="hidden" value="LittleNinja\News"/>
+            <input name="commentable_type" type="hidden" value="LittleNinja\Post"/>
 
             <div class="on-row clearfix">
                 <div class="col-md-6">
-                    <label for="visitor_name"><strong>Вашите имена</strong> /задължително/</label>
-                    <input id="visitor_name" type="text" name="visitor_name" required/>
-                    @if ($errors->has('visitor_name'))
+                    <label for="user_name">
+                        <strong>Вашите имена</strong> /задължително/
+                    </label>
+                    <input id="user_name" type="text" name="user_name" required/>
+                    @if ($errors->has('user_name'))
                         <div class="text-danger">
-                            {{ $errors->first('visitor_name') }}
+                            {{ $errors->first('user_name') }}
                         </div>
                     @endif
                 </div>
                 <div class="col-md-6">
-                    <label for="visitor_email"><strong>E-mail</strong></label>
-                    <input id="visitor_email" type="email" name="visitor_email"/>
-                    @if ($errors->has('visitor_email'))
+                    <label for="user_email">
+                        <strong>E-mail</strong>
+                    </label>
+                    <input id="user_email" type="email" name="user_email"/>
+                    @if ($errors->has('user_email'))
                         <div class="text-danger">
-                            {{ $errors->first('visitor_email') }}
+                            {{ $errors->first('user_email') }}
                         </div>
                     @endif
                 </div>

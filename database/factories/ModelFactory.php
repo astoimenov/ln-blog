@@ -11,21 +11,11 @@
 |
 */
 
-$factory->define('LittleNinja\User', function ($faker) {
+$factory->define(LittleNinja\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
-        'password' => str_random(10),
+        'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
-    ];
-});
-
-$factory->define('LittleNinja\Post', function ($faker) {
-    return [
-        'post_title' => $faker->catchPhrase,
-        'post_slug' => $faker->slug,
-        'post_content' => $faker->realText,
-        'is_published' => true,
-        'author_id' => rand(1, 10)
     ];
 });

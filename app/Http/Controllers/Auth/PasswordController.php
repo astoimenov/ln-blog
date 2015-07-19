@@ -2,8 +2,8 @@
 
 namespace LittleNinja\Http\Controllers\Auth;
 
-use Illuminate\Foundation\Auth\ResetsPasswords;
 use LittleNinja\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller
 {
@@ -23,6 +23,7 @@ class PasswordController extends Controller
     /**
      * Create a new password controller instance.
      *
+     * @return void
      */
     public function __construct()
     {

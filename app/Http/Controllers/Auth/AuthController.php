@@ -2,10 +2,11 @@
 
 namespace LittleNinja\Http\Controllers\Auth;
 
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Illuminate\Support\Facades\Validator;
-use LittleNinja\Http\Controllers\Controller;
 use LittleNinja\User;
+use Validator;
+use LittleNinja\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
@@ -20,17 +21,12 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers;
-
-    protected $redirectPath = '/admin/posts';
-
-    protected $loginPath = '/auth/login';
-
-    protected $redirectAfterLogout = '/auth/login';
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
      * Create a new authentication controller instance.
      *
+     * @return void
      */
     public function __construct()
     {
@@ -40,7 +36,7 @@ class AuthController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array $data
+     * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -55,7 +51,7 @@ class AuthController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array $data
+     * @param  array  $data
      * @return User
      */
     protected function create(array $data)

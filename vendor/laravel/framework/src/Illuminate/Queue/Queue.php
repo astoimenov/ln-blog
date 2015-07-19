@@ -5,6 +5,7 @@ namespace Illuminate\Queue;
 use Closure;
 use DateTime;
 use RuntimeException;
+use Illuminate\Support\Arr;
 use SuperClosure\Serializer;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Queue\QueueableEntity;
@@ -51,7 +52,7 @@ abstract class Queue
      *
      * @throws \RuntimeException
      *
-     * @deprecated since version 5.1
+     * @deprecated since version 5.1.
      */
     public function marshal()
     {
@@ -167,7 +168,7 @@ abstract class Queue
     {
         $payload = json_decode($payload, true);
 
-        return json_encode(array_set($payload, $key, $value));
+        return json_encode(Arr::set($payload, $key, $value));
     }
 
     /**

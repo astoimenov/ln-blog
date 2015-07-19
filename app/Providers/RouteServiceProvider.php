@@ -2,11 +2,8 @@
 
 namespace LittleNinja\Providers;
 
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
-use LittleNinja\Category;
-use LittleNinja\Post;
-use LittleNinja\Tag;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -22,31 +19,26 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, etc.
      *
-     * @param  \Illuminate\Routing\Router $router
+     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
     public function boot(Router $router)
     {
-        $router->bind('categories', function ($slug) {
-            return Category::withTrashed()->whereCategorySlug($slug)->first();
-        });
-
-        $router->bind('posts', function ($slug) {
-            return Post::withTrashed()->wherePostSlug($slug)->first();
-        });
-
-        $router->bind('tags', function ($slug) {
-            return Tag::withTrashed()->whereTagSlug($slug)->first();
-        });
+        //
 
         parent::boot($router);
     }
 
     /**
      * Define the routes for the application.
+     *
+     * @param  \Illuminate\Routing\Router  $router
+     * @return void
      */
-    public function map()
+    public function map(Router $router)
     {
-        $this->loadRoutesFrom(app_path('Http/routes.php'));
+        $router->group(['namespace' => $this->namespace], function ($router) {
+            require app_path('Http/routes.php');
+        });
     }
 }

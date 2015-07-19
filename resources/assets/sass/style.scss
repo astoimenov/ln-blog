@@ -380,14 +380,14 @@ section {
     &.news-list {
         margin-top: 56px;
     }
-    &.article-comments {
+    &.post-comments {
         width: 100%;
-        &.article-page {
+        &.post-page {
             margin-top: 38px;
         }
     }
     &.comment-form {
-        &.article-page {
+        &.post-page {
             margin-top: 50px;
             header {
                 margin-bottom: 17px;
@@ -1043,7 +1043,7 @@ article {
             }
         }
     }
-    &.main-article {
+    &.main-post {
         margin-top: 20px;
         padding-bottom: 50px;
         width: 100%;
@@ -1064,21 +1064,6 @@ article {
                 right: 0;
                 span {
                     margin-right: 5px;
-                }
-            }
-        }
-        section.related-news {
-            background: $color_mercury_approx;
-            width: 100%;
-            header {
-                margin-bottom: 0;
-                h3 {
-                    color: $white;
-                    font-size: 13px;
-                    span {
-                        color: $color_dodger_blue_approx;
-                        margin-right: 3px;
-                    }
                 }
             }
         }

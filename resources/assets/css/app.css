@@ -8655,18 +8655,18 @@ section.page-header {
 section.news-list {
   margin-top: 56px; }
 
-section.article-comments {
+section.post-comments {
   width: 100%; }
-  section.article-comments.article-page {
+  section.post-comments.post-page {
     margin-top: 38px; }
 
-section.comment-form.article-page {
+section.comment-form.post-page {
   margin-top: 50px; }
-  section.comment-form.article-page header {
+  section.comment-form.post-page header {
     margin-bottom: 17px; }
-  section.comment-form.article-page div.on-row {
+  section.comment-form.post-page div.on-row {
     width: 100%; }
-    section.comment-form.article-page div.on-row + div.on-row {
+    section.comment-form.post-page div.on-row + div.on-row {
       margin-top: 23px; }
 
 section.comment-form label {
@@ -9157,17 +9157,17 @@ article.news-list-article {
       article.news-list-article h3.title > a:hover {
         text-decoration: underline; }
 
-article.main-article {
+article.main-post {
   margin-top: 20px;
   padding-bottom: 50px;
   width: 100%; }
-  article.main-article div.main-image {
+  article.main-post div.main-image {
     margin-bottom: 28px;
     position: relative;
     width: 100%; }
-    article.main-article div.main-image img {
+    article.main-post div.main-image img {
       width: 100%; }
-    article.main-article div.main-image div.image-label {
+    article.main-post div.main-image div.image-label {
       background: rgba(0, 0, 0, 0.9);
       bottom: 0;
       color: #e8e8e8;
@@ -9175,19 +9175,8 @@ article.main-article {
       padding: 4px 10px 1px;
       position: absolute;
       right: 0; }
-      article.main-article div.main-image div.image-label span {
+      article.main-post div.main-image div.image-label span {
         margin-right: 5px; }
-  article.main-article section.related-news {
-    background: #e4e4e4;
-    width: 100%; }
-    article.main-article section.related-news header {
-      margin-bottom: 0; }
-      article.main-article section.related-news header h3 {
-        color: white;
-        font-size: 13px; }
-        article.main-article section.related-news header h3 span {
-          color: #199cfd;
-          margin-right: 3px; }
 
 article.user-comment {
   width: 100%; }
@@ -9351,5 +9340,3 @@ footer.main {
     color: #a3a3a3;
     font-size: 12px;
     line-height: 40px; }
-
-/*# sourceMappingURL=app.css.map */
