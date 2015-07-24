@@ -16,7 +16,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::whereIsPublished(1)->orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::whereIsPublished(1)
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
         $title = '';
 
         return view('posts.index', compact('posts', 'title'));
@@ -38,13 +40,15 @@ class PostsController extends Controller
     {
         $keyword = $request->input('search');
         $posts = Post::where(function ($q) use ($keyword) {
-
-            $q->whereRaw("MATCH(post_title, post_content) AGAINST(? IN BOOLEAN MODE)", array($keyword));
-
+            $q->whereRaw(
+                "MATCH(post_title, post_content) AGAINST (? IN BOOLEAN MODE)",
+                array($keyword)
+            );
         })->paginate(10);
 
         $title = 'Търсене';
 
-        return view('posts.index', compact('posts', 'title'))->withInput($request->all());
+        return view('posts.index', compact('posts', 'title'))
+            ->withInput($request->all());
     }
 }

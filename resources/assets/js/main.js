@@ -125,4 +125,9 @@ $(document).ready(function () {
         $('.description').text(description);
     }
 
+    var favBtn = $('.favorite');
+    favBtn.click(function (e) {
+        favBtn.toggleClass('selected');
+    });
+
 });

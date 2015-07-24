@@ -4,7 +4,9 @@
     <div class="demo-blog__posts mdl-grid">
         <div class="mdl-card coffee-pic mdl-cell mdl-cell--8-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
-                <h3><a href="entry.html">Coffee Pic</a></h3>
+                <h3>
+                    <a href="/posts/voluptatem-expedita-veniam-dolor-quam-earum-et">Coffee Pic</a>
+                </h3>
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
                 <div class="minilogo"></div>
@@ -18,7 +20,7 @@
             <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent"><i
                         class="material-icons mdl-color-text--white">add</i></button>
             <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
-                <img src="images/logo.png">
+                <img src="{{ asset('images/logo.png') }}">
                 +1,337
             </div>
             <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
@@ -50,7 +52,9 @@
         </div>
         <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
-                <h3><a href="entry.html">On the road again</a></h3>
+                <h3>
+                    <a href="/posts/voluptatem-expedita-veniam-dolor-quam-earum-et">On the road again</a>
+                </h3>
             </div>
             <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
                 Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim
@@ -67,8 +71,9 @@
         </div>
         <div class="mdl-card amazing mdl-cell mdl-cell--12-col">
             <div class="mdl-card__title mdl-color-text--grey-50">
-                <h3 class="quote"><a href="entry.html">I couldn’t take any pictures but this was an amazing
-                        thing…</a></h3>
+                <h3 class="quote">
+                    <a href="/posts/voluptatem-expedita-veniam-dolor-quam-earum-et">I couldn’t take any pictures but this was an amazing thing…</a>
+                </h3>
             </div>
             <div class="mdl-card__supporting-text mdl-color-text--grey-600">
                 Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim
@@ -85,7 +90,9 @@
         </div>
         <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
-                <h3><a href="entry.html">Shopping</a></h3>
+                <h3>
+                    <a href="/posts/voluptatem-expedita-veniam-dolor-quam-earum-et">Shopping</a>
+                </h3>
             </div>
             <div class="mdl-card__supporting-text mdl-color-text--grey-600">
                 Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim
@@ -102,7 +109,7 @@
         </div>
         <nav class="demo-nav mdl-cell mdl-cell--12-col">
             <div class="section-spacer"></div>
-            <a href="entry.html" class="demo-nav__button">
+            <a href="/posts/voluptatem-expedita-veniam-dolor-quam-earum-et" class="demo-nav__button">
                 More
                 <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                     <i class="material-icons">arrow_forward</i>

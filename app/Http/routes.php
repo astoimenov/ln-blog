@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', [
+use Illuminate\Http\Request;
+use LittleNinja\Contracts\Search;
+
+Route::get('/',[
     'as' => 'home',
     'uses' => 'PostsController@index'
 ]);

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * material-design-lite - Material Design Components in CSS, JS and HTML
  * @version v1.0.0
@@ -5,19 +6,19 @@
  * @copyright 2015 Google, Inc.
  * @link https://github.com/google/material-design-lite
  */
-@charset "UTF-8";
+
 html {
-    color: rgba(0, 0, 0, .87)
+    color: rgba(0, 0, 0, .87);
 }
 
 ::-moz-selection {
     background: #b3d4fc;
-    text-shadow: none
+    text-shadow: none;
 }
 
 ::selection {
     background: #b3d4fc;
-    text-shadow: none
+    text-shadow: none;
 }
 
 hr {
@@ -26,11 +27,11 @@ hr {
     display: block;
     height: 1px;
     margin: 1em 0;
-    padding: 0
+    padding: 0;
 }
 
 audio, canvas, img, svg, video {
-    vertical-align: middle
+    vertical-align: middle;
 }
 
 fieldset {
@@ -3150,11 +3151,8 @@ input.mdl-button[type="submit"] {
 }
 
 .mdl-card__media {
-    background-attachment: scroll;
-    background-color: rgb(249, 96, 76);
     background-origin: padding-box;
-    background-position: 50% 50%;
-    background-repeat: repeat;
+    background: rgb(249, 96, 76) repeat scroll 50% 50%;
     background-size: cover;
     box-sizing: border-box
 }
@@ -5075,8 +5073,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
 }
 
 .mdl-slider.is-upgraded::-moz-range-thumb {
-    background: rgb(63, 81, 181);
-    background-image: none;
+    background: rgb(63, 81, 181) none;
     border: none;
     border-radius: 50%;
     box-sizing: border-box;
@@ -5090,20 +5087,18 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
 }
 
 .mdl-slider.is-upgraded:focus:not(:active)::-moz-range-thumb {
-    box-shadow: 0 0 0 10px rgba(63, 81, 181, .26)
+    box-shadow: 0 0 0 10px rgba(63, 81, 181, .26);
 }
 
 .mdl-slider.is-upgraded:active::-webkit-slider-thumb {
-    background: rgb(63, 81, 181);
-    background-image: none;
+    background: rgb(63, 81, 181) none;
     transform: scale(1.5);
-    -webkit-transform: scale(1.5)
+    -webkit-transform: scale(1.5);
 }
 
 .mdl-slider.is-upgraded:active::-moz-range-thumb {
-    background: rgb(63, 81, 181);
-    background-image: none;
-    transform: scale(1.5)
+    background: rgb(63, 81, 181) none;
+    transform: scale(1.5);
 }
 
 .mdl-slider.is-upgraded::-ms-thumb {
@@ -5114,62 +5109,62 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
     transform: scale(.375);
     -ms-transform: scale(.375);
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1);
-    width: 32px
+    width: 32px;
 }
 
 .mdl-slider.is-upgraded:focus:not(:active)::-ms-thumb {
     background: radial-gradient(circle closest-side, rgb(63, 81, 181) 0%, rgb(63, 81, 181) 37.5%, rgba(63, 81, 181, .26) 37.5%, rgba(63, 81, 181, .26) 100%);
     transform: scale(1);
-    -ms-transform: scale(1)
+    -ms-transform: scale(1);
 }
 
 .mdl-slider.is-upgraded:active::-ms-thumb {
     background: rgb(63, 81, 181);
     transform: scale(.5625);
-    -ms-transform: scale(.5625)
+    -ms-transform: scale(.5625);
 }
 
 .mdl-slider.is-upgraded.is-lowest-value::-webkit-slider-thumb {
     background: 0 0;
-    border: 2px solid rgba(0, 0, 0, .26)
+    border: 2px solid rgba(0, 0, 0, .26);
 }
 
 .mdl-slider.is-upgraded.is-lowest-value::-moz-range-thumb {
     background: 0 0;
-    border: 2px solid rgba(0, 0, 0, .26)
+    border: 2px solid rgba(0, 0, 0, .26);
 }
 
 .mdl-slider.is-upgraded.is-lowest-value ~ .mdl-slider__background-flex > .mdl-slider__background-upper {
-    left: 6px
+    left: 6px;
 }
 
 .mdl-slider.is-upgraded.is-lowest-value:focus:not(:active)::-webkit-slider-thumb {
     background: rgba(0, 0, 0, .12);
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, .12)
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, .12);
 }
 
 .mdl-slider.is-upgraded.is-lowest-value:focus:not(:active)::-moz-range-thumb {
     background: rgba(0, 0, 0, .12);
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, .12)
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, .12);
 }
 
 .mdl-slider.is-upgraded.is-lowest-value:active::-webkit-slider-thumb {
-    border: 1.6px solid rgba(0, 0, 0, .26);
+    border: 2px solid rgba(0, 0, 0, .26);
     transform: scale(1.5);
-    -webkit-transform: scale(1.5)
+    -webkit-transform: scale(1.5);
 }
 
 .mdl-slider.is-upgraded.is-lowest-value:active ~ .mdl-slider__background-flex > .mdl-slider__background-upper {
-    left: 9px
+    left: 9px;
 }
 
 .mdl-slider.is-upgraded.is-lowest-value:active::-moz-range-thumb {
     border: 1.5px solid rgba(0, 0, 0, .26);
-    transform: scale(1.5)
+    transform: scale(1.5);
 }
 
 .mdl-slider.is-upgraded.is-lowest-value::-ms-thumb {
-    background: radial-gradient(circle closest-side, transparent 0%, transparent 66.67%, rgba(0, 0, 0, .26) 66.67%, rgba(0, 0, 0, .26) 100%)
+    background: radial-gradient(circle closest-side, transparent 0%, transparent 66.67%, rgba(0, 0, 0, .26) 66.67%, rgba(0, 0, 0, .26) 100%);
 }
 
 .mdl-slider.is-upgraded.is-lowest-value:focus:not(:active)::-ms-thumb {

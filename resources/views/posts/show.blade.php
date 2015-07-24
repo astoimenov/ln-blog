@@ -1,226 +1,173 @@
 @extends('app')
 
 @section('content')
-    <main class="row" xmlns="http://www.w3.org/1999/html">
-        <section class="page-header clearfix">
-            <div class="col-xs-12">
-                <h1>{{ $post->post_title }}</h1>
-            </div>
-        </section>
-        <section class="post-info clearfix">
-            <div class="author-details clearfix">
-                <div class="col-md-12">
-                    <a class="image" href="{{-- route('authors.show', ['id' => $post->author]) --}}" title="{{ $post->author->name --}}">
-                        <img src="{{ asset('/temp/author_thumb.png') }}" alt="image"/>
-                    </a>
-
-                    <div class="information">
-                        <div class="author">
-                            <span class="label-author">Автор:</span>
-                            <a href="{{-- route('authors.show', ['id' => $post->author]) --}}" title="{{ $post->author->name }}">
-                                <strong>{{ $post->author->name }}</strong>
-                            </a>
-                        </div>
-                        <a class="view-all" href="{{-- route('authors.show', ['id' => $post->author]) --}}"
-                           title="{{ $post->author->name }}">
-                            Всички статии на автора <span class="glyphicon glyphicon-menu-right"></span>
-                        </a>
-                    </div>
+    <div class="demo-blog--blogpost">
+        <div class="demo-back">
+            <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="/">
+                <i class="material-icons">arrow_back</i>
+            </a>
+        </div>
+        <div class="demo-blog__posts mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__media mdl-color-text--grey-50">
+                    <h3>On the road again</h3>
                 </div>
-            </div>
-            <div class="col-xs-12">
-                <div class="info-bar">
-                    <div class="information">
-                        <span class="published">
-                            <span class="date">
-                                {{ $post->created_at->format('j F Y') }}
-                            </span>
-                            <span class="hours">
-                                {{ $post->created_at->toTimeString() }}
-                            </span>
-                        </span>
-                        <span class="comments">
-                            <span class="glyphicon glyphicon-comment"></span>
-                            <span class="count">
-                                {{ count($post->comments) }} коментари
-                            </span>
-                        </span>
+                <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                    <div class="minilogo"></div>
+                    <div>
+                        <strong>The Newist</strong>
+                        <span>2 days ago</span>
                     </div>
-                </div>
-            </div>
-        </section>
-        <article class="main-post clearfix">
-            <div class="col-md-12">
-                <div class="col-md-10 col-md-offset-1">
-                    {!! $post->post_content !!}
+                    <div class="section-spacer"></div>
+                    <div class="meta__favorites">425 <i class="material-icons favorite">favorite</i></div>
+                    <div>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+                            id="share-menu">
+                            <i class="material-icons">share</i>
+                        </button>
 
-                    @if(count($post->tags) !== 0)
-                        <div class="tags">
-                            <span class="fa fa-tags"></span>
-                            <ul class="tags-list">
-                                @foreach($post->tags as $tag)
-                                    <li>
-                                        {!! link_to_route('tags.show', $tag->tag_name, [$tag->tag_slug]) !!}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
-                    <div class="share-box">
-                        <span class="text-label">Сподели</span>
-                        <ul class="social-sharing">
-                            <li>
-                                <a href="#">
-                                    <img src="{{ asset('/images/social-icons/facebook.png') }}" alt="icon"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{ asset('/images/social-icons/linkedin.png') }}" alt="icon"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{ asset('/images/social-icons/twitter.png') }}" alt="icon"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{ asset('/images/social-icons/google-plus.png') }}" alt="icon"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{ asset('/images/social-icons/pinterest.png') }}" alt="icon"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{ asset('/images/social-icons/github.png') }}" alt="icon"/>
-                                </a>
-                            </li>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="share-menu">
+                            <li class="mdl-menu__item">Facebook</li>
+                            <li class="mdl-menu__item">Twitter</li>
+                            <li class="mdl-menu__item">Google+</li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </article>
-        <section class="post-comments post-page clearfix">
-            <div class="col-md-12">
-                <header class="top-stripe-header">
-                    <h3>
-                        <strong>{{ count($post->comments) }} коментар/a</strong>
-                    </h3>
-                </header>
-            </div>
-            <div class="col-md-12">
-                @foreach($post->comments as $comment)
-                    <article class="user-comment">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="user">
-                                    <span class="fa fa-user"></span>
+                <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+                    <p>
+                        Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim
+                        eiusmod
+                        labore sit amet. Voluptate voluptate irure occaecat deserunt incididunt esse in. Sunt velit
+                        aliquip
+                        sunt elit ex nulla reprehenderit qui ut eiusmod ipsum do. Duis veniam reprehenderit laborum
+                        occaecat
+                        id proident nulla veniam. Duis enim deserunt voluptate aute veniam sint pariatur exercitation.
+                        Irure
+                        mollit est sit labore est deserunt pariatur duis aute laboris cupidatat. Consectetur consequat
+                        esse
+                        est sit veniam adipisicing ipsum enim irure.
+                    </p>
 
-                                    <div class="spacer"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-10">
-                                <div class="top-bar">
-                                    <span class="author">{{ $comment->user_name }}</span>
-                                <span class="information">
-                                    на {{ $comment->created_at->format('j F Y') }}
-                                    в {{ $comment->created_at->toTimeString() }}
-                                </span>
-                                    <a class="reply" href="#">
-                                        Отговори <span class="fa fa-reply"></span>
-                                    </a>
-                                </div>
-                                <div class="comment">
-                                    {{ $comment->comment_content }}
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                @endforeach
-            </div>
-        </section>
-        <section class="comment-form post-page">
-            <div class="col-md-12">
-                <header class="solid-header gray slider">
-                    <h3>
-                        <strong>Напиши коментар</strong>
-                    </h3>
-                </header>
-            </div>
-            {!! Form::open(array('action' => 'CommentsController@store')) !!}
-            <input name="commentable_id" type="hidden" value="{{ $post->id }}"/>
-            <input name="commentable_type" type="hidden" value="LittleNinja\Post"/>
+                    <p>
+                        Qui ullamco consectetur aute fugiat officia ullamco proident Lorem ad irure. Sint eu ut
+                        consectetur
+                        ut esse veniam laboris adipisicing aliquip minim anim labore commodo. Incididunt eu enim enim
+                        ipsum
+                        Lorem commodo tempor duis eu ullamco tempor elit occaecat sit. Culpa eu sit voluptate ullamco ad
+                        irure. Anim commodo aliquip cillum ea nostrud commodo id culpa eu irure ut proident. Incididunt
+                        cillum excepteur incididunt mollit exercitation fugiat in. Magna irure laborum amet non ullamco
+                        aliqua eu. Aliquip adipisicing dolore irure culpa aute enim. Ullamco quis eiusmod ipsum laboris
+                        quis
+                        qui.
+                    </p>
 
-            <div class="on-row clearfix">
-                <div class="col-md-6">
-                    <label for="user_name">
-                        <strong>Вашите имена</strong> /задължително/
-                    </label>
-                    <input id="user_name" type="text" name="user_name" required/>
-                    @if ($errors->has('user_name'))
-                        <div class="text-danger">
-                            {{ $errors->first('user_name') }}
-                        </div>
-                    @endif
+                    <p>
+                        Cillum ullamco eu cupidatat excepteur Lorem minim sint quis officia irure irure sint fugiat
+                        nostrud.
+                        Pariatur Lorem irure excepteur Lorem non irure ea fugiat adipisicing esse nisi ullamco proident
+                        sint. Consectetur qui quis cillum occaecat ullamco veniam et Lorem cupidatat pariatur. Labore
+                        officia ex aliqua et occaecat velit dolor deserunt minim velit mollit irure. Cillum cupidatat
+                        enim
+                        officia non velit officia labore. Ut esse nisi voluptate et deserunt enim laborum qui magna sint
+                        sunt cillum. Id exercitation labore sint ea labore adipisicing deserunt enim commodo consectetur
+                        reprehenderit enim. Est anim nostrud quis non fugiat duis cillum. Aliquip enim officia ad
+                        commodo
+                        id.
+                    </p>
                 </div>
-                <div class="col-md-6">
-                    <label for="user_email">
-                        <strong>E-mail</strong>
-                    </label>
-                    <input id="user_email" type="email" name="user_email"/>
-                    @if ($errors->has('user_email'))
-                        <div class="text-danger">
-                            {{ $errors->first('user_email') }}
+                <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <textarea rows=1 class="mdl-textfield__input" id="comment"></textarea>
+                            <label for="comment" class="mdl-textfield__label">Join the discussion</label>
                         </div>
-                    @endif
-                </div>
-            </div>
-            <div class="on-row clearfix">
-                <div class="col-md-12">
-                    <label for="comment_content">
-                        <strong>Коментар</strong> /задължително/
-                    </label>
-                    <textarea id="comment_content" name="comment_content" required></textarea>
-                    @if ($errors->has('comment_content'))
-                        <div class="text-danger">
-                            {{ $errors->first('comment_content') }}
-                        </div>
-                    @endif
-                </div>
-            </div>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect
+                            mdl-button--icon mdl-color--lime-500">
+                            <i class="material-icons">check</i>
+                        </button>
+                    </form>
+                    <div class="comment mdl-color-text--grey-700">
+                        <header class="comment__header">
+                            <img src="{{ asset('images/co1.jpg') }}" class="comment__avatar">
 
-            <div class="on-row clearfix">
-                <div class="col-md-12">
-                    <div class="form-group form-g-f">
-                        <div class="g-recaptcha" data-sitekey="6Lda1AcTAAAAAPol03oWmVsVpe653RfrPmvPTNxY"></div>
-                        @if ($errors->has('g-recaptcha-response'))
-                            <div class="text-danger">
-                                {{ $errors->first('g-recaptcha-response') }}
+                            <div class="comment__author">
+                                <strong>James Splayd</strong>
+                                <span>2 days ago</span>
                             </div>
-                        @endif
+                        </header>
+                        <div class="comment__text">
+                            In in culpa nulla elit esse. Ex cillum enim aliquip sit sit ullamco ex eiusmod fugiat.
+                            Cupidatat
+                            ad minim officia mollit laborum magna dolor tempor cupidatat mollit. Est velit sit ad aliqua
+                            ullamco laborum excepteur dolore proident incididunt in labore elit.
+                        </div>
+                        <nav class="comment__actions">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                <i class="material-icons">thumb_up</i>
+                            </button>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                <i class="material-icons">thumb_down</i>
+                            </button>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                <i class="material-icons">share</i>
+                            </button>
+                        </nav>
+                        <div class="comment__answers">
+                            <div class="comment">
+                                <header class="comment__header">
+                                    <img src="{{ asset('images/co2.jpg') }}" class="comment__avatar">
+
+                                    <div class="comment__author">
+                                        <strong>John Dufry</strong>
+                                        <span>2 days ago</span>
+                                    </div>
+                                </header>
+                                <div class="comment__text">
+                                    Yep, agree!
+                                </div>
+                                <nav class="comment__actions">
+                                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                        <i class="material-icons">thumb_up</i>
+                                    </button>
+                                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                        <i class="material-icons">thumb_down</i>
+                                    </button>
+                                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                        <i class="material-icons">share</i>
+                                    </button>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="on-row clearfix">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <button type="submit" name="submit">Публикувай</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {!! Form::close() !!}
-        </section>
-    </main>
+            <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+                <a href="/" class="demo-nav__button">
+                    <button
+                        class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900">
+                        <i class="material-icons">arrow_back</i>
+                    </button>
+                    Newer
+                </a>
+
+                <div class="section-spacer"></div>
+                <a href="/" class="demo-nav__button">
+                    Older
+                    <button
+                        class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900">
+                        <i class="material-icons">arrow_forward</i>
+                    </button>
+                </a>
+            </nav>
+        </div>
+    </div>
 @endsection
 
 @section('scripts')
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+
+    </script>
 @endsection

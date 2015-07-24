@@ -1,47 +1,23 @@
-<header class="main docs-layout-header mdl-layout__header is-casting-shadow">
-    <div class="container">
-        <div id="header" class="clearfix">
-            <!--<div class="col-md-3 col-sm-4 col-xs-12">
-                <div id="weather" class="row">
-                    <div class="weather-row">
-                        <div class="weather-icon">
-                            <span id="weather-icon" class=""></span>
-                        </div>
-                        <div class="weather-information">
-                            <div class="weather-city-date">
-                                <span class="city">София</span>
-                                <span class="temperature"></span>
-                                <span class="weather-chevron glyphicon glyphicon-chevron-down"></span>
-                            </div>
-                            <span class="description"></span>
-                        </div>
-                    </div>
-                    <div class="weather-city-select">
-                        <div class="arrow"></div>
-                        <div class="box">
-                            <a class="weather-choose-city" href="#" data-city="Sofia">София</a>
-                            <a class="weather-choose-city" href="#" data-city="Varna">Варна</a>
-                            <a class="weather-choose-city" href="#" data-city="Plovdiv">Пловдив</a>
-                            <a class="weather-choose-city" href="#" data-city="Burgas">Бургас</a>
-                            <a class="weather-choose-city" href="#" data-city="Sliven">Сливен</a>
-                            <a class="weather-choose-city" href="#" data-city="Dupnitsa">Дупница</a>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-            <div class="col-sm-4 col-md-offset-1 col-xs-12">
-                <a id="logo" href="/" title="Гласове">
-                    <img src="{{-- asset('/images/logo.png') --}}" alt="лого"/>
-                </a>
+<header class="mdl-layout__header mdl-layout__header--waterfall">
+    <!-- Top row, always visible -->
+    <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <h1 class="mdl-layout-title">
+            AStoimenov's blog
+        </h1>
+
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+            <label class="mdl-button mdl-js-button mdl-button--icon"
+                   for="waterfall-exp">
+                <i class="material-icons">search</i>
+            </label>
+
+            <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" name="sample"
+                       id="waterfall-exp"/>
             </div>
-            <!--<div class="col-md-3 col-sm-4 col-xs-12 pull-right">
-                <form action="/search" method="get" class="search row pull-right">
-                    <input type="text" name="search" placeholder="Търси..." value="{{ Input::get('search') }}"/>
-                    <button type="submit" title="Търси"><span class="glyphicon glyphicon-search"></span></button>
-                </form>
-            </div>-->
         </div>
     </div>
-
-    @include('partials.navigation')
 </header>

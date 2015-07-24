@@ -16,6 +16,7 @@ elixir(function (mix) {
     //mix.sass('style.scss', 'resources/assets/css');
     mix.styles([
         'material.css',
+        'tt.css',
         'styles.css'
     ]);
 
